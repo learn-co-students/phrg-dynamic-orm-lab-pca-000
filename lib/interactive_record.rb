@@ -54,7 +54,7 @@ class InteractiveRecord
   end
 
   def self.find_by(pair)
-    sql = "SELECT * FROM #{self.table_name} WHERE #{pair.key(pair.values.first).to_s} = '#{pair.values.first.to_s}'"
+    sql = "SELECT * FROM #{self.table_name} WHERE #{pair.keys.first} = '#{pair.values.first}'"
     DB[:conn].execute(sql)
   end
 
